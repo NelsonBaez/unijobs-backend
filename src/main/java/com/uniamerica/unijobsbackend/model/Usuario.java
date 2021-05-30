@@ -40,6 +40,15 @@ public class Usuario implements Serializable, UserDetails {
     @OneToOne
     private TipoUsuario tipoUsuario;
 
+    public Usuario(String email, String senha, String nome, String celular, String ra, TipoUsuario tipoUsuario) {
+        this.email = email;
+        this.senha = senha;
+        this.nome = nome;
+        this.celular = celular;
+        this.ra = ra;
+        this.tipoUsuario = tipoUsuario;
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         SimpleGrantedAuthority authority = new SimpleGrantedAuthority(tipoUsuario.getNome());
