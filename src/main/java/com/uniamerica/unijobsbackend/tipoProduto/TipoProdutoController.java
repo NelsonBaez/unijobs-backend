@@ -1,5 +1,6 @@
 package com.uniamerica.unijobsbackend.tipoProduto;
 
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,23 +16,27 @@ public class TipoProdutoController {
     private TipoProdutoService tipoProdutoService;
 
     @GetMapping
+    @ApiOperation(value = "Retorna uma lista de Categorias de Produto.")
     public List<TipoProduto> visualizar(){
         return tipoProdutoService.VisualizarTipoProduto() ;
     }
 
     @PostMapping
+    @ApiOperation(value = "Cadastra uma Categoria de Produto.")
     @ResponseStatus(HttpStatus.CREATED)
     public TipoProduto cadastrar(@Valid @RequestBody TipoProduto tipoProduto){
         return tipoProdutoService.CadastrarTipoProduto(tipoProduto);
     }
 
     @PutMapping(path = "{id_tipoProduto}")
+    @ApiOperation(value = "Edita uma Categoria de Produto.")
     @ResponseStatus(HttpStatus.OK)
     public TipoProduto editar(@Valid @RequestBody TipoProduto novoTipoProduto, @PathVariable("id_tipoProduto") Integer id_tipoProduto){
         return tipoProdutoService.EditarTipoProduto(id_tipoProduto, novoTipoProduto);
     }
 
     @DeleteMapping(path = "{id_tipoProduto}")
+    @ApiOperation(value = "Deleta uma Categoria de Produto.")
     @ResponseStatus(HttpStatus.OK)
     public String deletar(@PathVariable("id_tipoProduto") Integer id_tipoProduto){
         return tipoProdutoService.DeletarTipoProduto(id_tipoProduto);

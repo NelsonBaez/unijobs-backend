@@ -2,6 +2,7 @@ package com.uniamerica.unijobsbackend.produto;
 
 import com.uniamerica.unijobsbackend.tipoProduto.TipoProduto;
 import com.uniamerica.unijobsbackend.tipoProduto.TipoProdutoService;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,23 +18,27 @@ public class ProdutoController {
     private ProdutoService produtoService;
 
     @GetMapping
+    @ApiOperation(value = "Retorna uma lista de Produtos")
     public List<Produto> visualizar(){
         return produtoService.VisualizarProduto() ;
     }
 
     @PostMapping
+    @ApiOperation(value = "Cadastra um Produto.")
     @ResponseStatus(HttpStatus.CREATED)
     public Produto cadastrar(@Valid @RequestBody Produto produto){
         return produtoService.CadastrarProduto(produto);
     }
 
     @PutMapping(path = "{id_produto}")
+    @ApiOperation(value = "Edita um Produto")
     @ResponseStatus(HttpStatus.OK)
     public Produto editar(@Valid @RequestBody Produto novoProduto, @PathVariable("id_produto") Integer id_produto){
         return produtoService.EditarProduto(id_produto, novoProduto);
     }
 
     @DeleteMapping(path = "{id_produto}")
+    @ApiOperation(value = "Deleta um Produto.")
     @ResponseStatus(HttpStatus.OK)
     public String deletar(@PathVariable("id_produto") Integer id_produto){
         return produtoService.DeletarProduto(id_produto);
