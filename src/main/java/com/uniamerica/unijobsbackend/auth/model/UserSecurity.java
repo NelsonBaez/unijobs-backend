@@ -16,8 +16,6 @@ public class UserSecurity implements UserDetails {
         this.password = usuario.getSenha();
     }
 
-
-
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;

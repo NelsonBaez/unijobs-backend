@@ -1,10 +1,12 @@
 package com.uniamerica.unijobsbackend.model;
 
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
+
+@RequiredArgsConstructor
 @Entity
 @Data
 public class TipoUsuario {
@@ -15,8 +17,4 @@ public class TipoUsuario {
 
     @Column(nullable = false)
     private String nome;
-
-//    @OneToMany
-//    private List<Usuario>usuarios;
-
 }
