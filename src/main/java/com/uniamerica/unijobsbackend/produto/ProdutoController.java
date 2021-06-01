@@ -13,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping({"/produtos"})
+@ApiOperation(value = "teste 123")
 public class ProdutoController {
     @Autowired
     private ProdutoService produtoService;
@@ -26,8 +27,8 @@ public class ProdutoController {
     @PostMapping
     @ApiOperation(value = "Cadastra um Produto.")
     @ResponseStatus(HttpStatus.CREATED)
-    public Produto cadastrar(@Valid @RequestBody Produto produto){
-        return produtoService.CadastrarProduto(produto);
+    public Produto cadastrar(@Valid @RequestBody NovoProdutoDTO produto){
+        return produtoService.CadastrarProduto(produto.converteModelo());
     }
 
     @PutMapping(path = "{id_produto}")

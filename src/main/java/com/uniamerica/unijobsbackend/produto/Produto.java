@@ -7,7 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -16,27 +15,18 @@ import javax.validation.constraints.NotBlank;
 public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @ApiModelProperty(value = "Código do Produto")
     private Integer id_produto;
 
-    @NotBlank(message = "O Título é obrigatório.")
-    @ApiModelProperty(value = "Título do Produto")
     private String titulo;
 
-    @NotBlank(message = "A descrição é obrigatória.")
-    @ApiModelProperty(value = "Descrição do Produto")
     private String descricao;
 
-    @ApiModelProperty(value = "Preço do Produto")
     private Double preco;
 
-    @ApiModelProperty(value = "Imagem do Produto")
     private String miniatura;
 
-    @ApiModelProperty(value = "Status do Produto")
     private Boolean ativo;
 
-    @ApiModelProperty(value = "Prazo do Produto")
     private Integer prazo;
 
     @ApiModelProperty(value = "Código do Usuário")
