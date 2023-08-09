@@ -2,9 +2,9 @@ name: Maven CI/CD
 
 on:
  push:
-    branches: [ master ]
+    branches: [ $default-branch ]
   pull_request:
-    branches: [ master ]
+    branches: [ $default-branch ]
 
 jobs:
   build_and_test:
@@ -34,4 +34,4 @@ jobs:
       - uses: actions/upload-artifact@v1
         with:
           name: Package
-          path: staging
+            path: staging
