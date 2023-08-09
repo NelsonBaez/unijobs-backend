@@ -11,9 +11,9 @@ name: Java CI with Maven
 on:
   workflow_dispatch:
   push:
-    branches: [ "development", "main" ]
+    branches: [ "eduardo_ci_cd", "main" ]
   pull_request:
-    branches: [ "development", "main" ]
+    branches: [ "eduardo_ci_cd", "main" ]
 
 jobs:
   build-and-test:
