@@ -13,5 +13,5 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-      - name: Build with Maven
-        run: mvn --batch-mode --update-snapshots package
+      - name: Run the Maven verify phase
+        run: mvn --batch-mode --update-snapshots verify
