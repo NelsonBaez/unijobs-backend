@@ -65,7 +65,7 @@
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-ui</artifactId>
-            <version>1.5.9</version>
+            <version>1.6.4</version>
         </dependency>
         <dependency>
             <groupId>org.springdoc</groupId>
@@ -100,7 +100,7 @@
         <dependency>
             <groupId>org.modelmapper</groupId>
             <artifactId>modelmapper-examples</artifactId>
-            <version>2.4.4</version>
+            <version>3.1.0</version>
         </dependency>
     </dependencies>
 
